@@ -3,19 +3,32 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "personal web/assets/AssetManifest.json": "2efbb41d7877d10aac9d091f58ccd7b9",
-  "personal web/assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
+  "personal web/assets/AssetManifest.json": "da5722c72b3b8572b390f6851563d31e",
+  "personal web/assets/assets/fonts/open-sans/OpenSans-Bold.ttf": "1025a6e0fb0fa86f17f57cc82a6b9756",
+  "personal web/assets/assets/fonts/open-sans/OpenSans-Italic.ttf": "f6238deb7f40a7a03134c11fb63ad387",
+  "personal web/assets/assets/fonts/open-sans/OpenSans-Regular.ttf": "3ed9575dcc488c3e3a5bd66620bdf5a4",
+  "personal web/assets/assets/fonts/poppins/Poppins-Bold.ttf": "a3e0b5f427803a187c1b62c5919196aa",
+  "personal web/assets/assets/fonts/poppins/Poppins-Italic.ttf": "5e956c44060a7b3c0e39819ae390ab15",
+  "personal web/assets/assets/fonts/poppins/Poppins-Regular.ttf": "8b6af8e5e8324edfd77af8b3b35d7f9c",
+  "personal web/assets/assets/fonts/raleway/Raleway-Bold.ttf": "7802d8b27fcb19893ce6b38c0789268e",
+  "personal web/assets/assets/fonts/raleway/Raleway-Italic.ttf": "f73026bcd64e5a5265ab616e5083cd48",
+  "personal web/assets/assets/fonts/raleway/Raleway-Regular.ttf": "75b4247fdd3b97d0e3b8e07b115673c2",
+  "personal web/assets/assets/images/hero-bg.png": "b3874e54561495bb0d13fe1f69e1dc08",
+  "personal web/assets/assets/images/logo.png": "21e9e4a3b55421e6839f3b4523a23292",
+  "personal web/assets/FontManifest.json": "9e56ab348b2d87df3f9609c20d58c8cf",
   "personal web/assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
-  "personal web/assets/NOTICES": "629f38d4987545fd1619636c4886e0c5",
-  "personal web/assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
+  "personal webassets/NOTICES": "ef106d1f3076038ef0bf1de019f27fe8",
+  "personal web/assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf": "3241d1d9c15448a4da96df05f3292ffe",
+  "personal web/assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": "eaed33dc9678381a55cb5c13edaf241d",
+  "personal web/assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "ffed6899ceb84c60a1efa51c809a57e4",
   "personal web/favicon.png": "5dcef449791fa27946b3d35ad8803796",
   "personal web/icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
   "personal web/icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-  "personal web/index.html": "2332a41e9eb458ee86dda5e5b78a0419",
-  "/personal web/": "2332a41e9eb458ee86dda5e5b78a0419",
-  "personal web/main.dart.js": "94a42f9f6e980f3b6c6eeabb3f928011",
-  "personal web/manifest.json": "16d639b66c0eb44008d0ca9613d4a3d9",
-  "personal web/version.json": "af4418dfc34ef4c87021aa1ddbb21a83"
+  "personal web/index.html": "de97bc29982c0086e09ce70146e9b1d8",
+  "/personal web/": "de97bc29982c0086e09ce70146e9b1d8",
+  "personal web/main.dart.js": "fa20fd73eda4940fa5f3b4513a0d367f",
+  "personal web/manifest.json": "da0521415e477075715e6e9877c8d301",
+  "personal web/version.json": "a209f32229bd5929b0257dae3d4365c2"
 };
 
 // The application shell files that are downloaded before a service worker can
@@ -116,7 +129,7 @@ self.addEventListener("fetch", (event) => {
     return;
   }
   // If the URL is the index.html, perform an online-first request.
-  if (key == '/') {
+  if (key == '/personal web/') {
     return onlineFirst(event);
   }
   event.respondWith(caches.open(CACHE_NAME)
@@ -155,7 +168,7 @@ async function downloadOffline() {
   for (var request of await contentCache.keys()) {
     var key = request.url.substring(origin.length + 1);
     if (key == "") {
-      key = "/";
+      key = "/personal web/";
     }
     currentContent[key] = true;
   }

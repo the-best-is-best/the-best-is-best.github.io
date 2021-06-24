@@ -1,6 +1,6 @@
 {
-    "name": "george_web",
-    "short_name": "george_web",
+    "name": "learn_web",
+    "short_name": "learn_web",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
