@@ -17,16 +17,16 @@ const RESOURCES = {
   "personal web/assets/assets/images/logo.png": "21e9e4a3b55421e6839f3b4523a23292",
   "personal web/assets/FontManifest.json": "9e56ab348b2d87df3f9609c20d58c8cf",
   "personal web/assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
-  "personal webassets/NOTICES": "ef106d1f3076038ef0bf1de019f27fe8",
+  "personal web/assets/NOTICES": "ef106d1f3076038ef0bf1de019f27fe8",
   "personal web/assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf": "3241d1d9c15448a4da96df05f3292ffe",
   "personal web/assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": "eaed33dc9678381a55cb5c13edaf241d",
   "personal web/assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "ffed6899ceb84c60a1efa51c809a57e4",
   "personal web/favicon.png": "5dcef449791fa27946b3d35ad8803796",
   "personal web/icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
   "personal web/icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-  "personal web/index.html": "de97bc29982c0086e09ce70146e9b1d8",
-  "/personal web/": "de97bc29982c0086e09ce70146e9b1d8",
-  "personal web/main.dart.js": "fa20fd73eda4940fa5f3b4513a0d367f",
+  "personal web/index.html": "382a6d445420cf863049cd215c910428",
+  "/": "382a6d445420cf863049cd215c910428",
+  "personal web/main.dart.js": "9f6ddd671f62686f9ea32ae1b8be3733",
   "personal web/manifest.json": "da0521415e477075715e6e9877c8d301",
   "personal web/version.json": "a209f32229bd5929b0257dae3d4365c2"
 };
@@ -129,7 +129,7 @@ self.addEventListener("fetch", (event) => {
     return;
   }
   // If the URL is the index.html, perform an online-first request.
-  if (key == '/personal web/') {
+  if (key == '/') {
     return onlineFirst(event);
   }
   event.respondWith(caches.open(CACHE_NAME)
@@ -168,7 +168,7 @@ async function downloadOffline() {
   for (var request of await contentCache.keys()) {
     var key = request.url.substring(origin.length + 1);
     if (key == "") {
-      key = "/personal web/";
+      key = "/";
     }
     currentContent[key] = true;
   }
