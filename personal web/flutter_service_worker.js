@@ -10,7 +10,7 @@ const RESOURCES = {
   "personal web/assets/assets/fonts/poppins/Poppins-Bold.ttf": "a3e0b5f427803a187c1b62c5919196aa",
   "personal web/assets/assets/fonts/poppins/Poppins-Italic.ttf": "5e956c44060a7b3c0e39819ae390ab15",
   "personal web/assets/assets/fonts/poppins/Poppins-Regular.ttf": "8b6af8e5e8324edfd77af8b3b35d7f9c",
-  "personal web//assets/fonts/raleway/Raleway-Bold.ttf": "7802d8b27fcb19893ce6b38c0789268e",
+  "personal web/assets/assets/fonts/raleway/Raleway-Bold.ttf": "7802d8b27fcb19893ce6b38c0789268e",
   "personal web/assets/assets/fonts/raleway/Raleway-Italic.ttf": "f73026bcd64e5a5265ab616e5083cd48",
   "personal web/assets/assets/fonts/raleway/Raleway-Regular.ttf": "75b4247fdd3b97d0e3b8e07b115673c2",
   "personal web/assets/assets/images/hero-bg.png": "b3874e54561495bb0d13fe1f69e1dc08",
@@ -25,9 +25,9 @@ const RESOURCES = {
   "personal web/favicon.png": "5dcef449791fa27946b3d35ad8803796",
   "personal web/icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
   "personal web/icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-  "personal web/index.html": "f454a9e1347462bf2b75f585917e6c74",
-  "/personal web/": "f454a9e1347462bf2b75f585917e6c74",
-  "personal web/main.dart.js": "c22b247e3a8741ec146924b115704926",
+  "personal web/index.html": "3267552c8a96f7ed1a2bd5bbfc18a6c5",
+  "/personal web/": "3267552c8a96f7ed1a2bd5bbfc18a6c5",
+  "personal web/main.dart.js": "814e79f64ebf972f060f2c0239bcf834",
   "personal web/manifest.json": "da0521415e477075715e6e9877c8d301",
   "personal web/version.json": "a209f32229bd5929b0257dae3d4365c2"
 };
@@ -80,7 +80,7 @@ self.addEventListener("activate", function (event) {
       for (var request of await contentCache.keys()) {
         var key = request.url.substring(origin.length + 1);
         if (key == "") {
-          key = "/";
+          key = "/personal web/";
         }
         // If a resource from the old manifest is not in the new cache, or if
         // the MD5 sum has changed, delete it. Otherwise the resource is left
@@ -122,7 +122,7 @@ self.addEventListener("fetch", (event) => {
     key = key.split('?v=')[0];
   }
   if (event.request.url == origin || event.request.url.startsWith(origin + '/#') || key == '') {
-    key = '/';
+    key = '/personal web/';
   }
   // If the URL is not the RESOURCE list then return to signal that the
   // browser should take over.
@@ -130,7 +130,7 @@ self.addEventListener("fetch", (event) => {
     return;
   }
   // If the URL is the index.html, perform an online-first request.
-  if (key == '/') {
+  if (key == '/personal web/') {
     return onlineFirst(event);
   }
   event.respondWith(caches.open(CACHE_NAME)
@@ -169,7 +169,7 @@ async function downloadOffline() {
   for (var request of await contentCache.keys()) {
     var key = request.url.substring(origin.length + 1);
     if (key == "") {
-      key = "/personal web/";
+      key = "/";
     }
     currentContent[key] = true;
   }
