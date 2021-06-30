@@ -5,15 +5,15 @@ const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "personal web/assets/AssetManifest.json": "21760440758e9c37fd7d557d2d89a394",
   "personal web/assets/assets/fonts/open-sans/OpenSans-Bold.ttf": "1025a6e0fb0fa86f17f57cc82a6b9756",
-  "personal web/assets/assets/fonts/open-sans/OpenSans-Italic.ttf": "f6238deb7f40a7a03134c11fb63ad387",
+  "personal web//assets/fonts/open-sans/OpenSans-Italic.ttf": "f6238deb7f40a7a03134c11fb63ad387",
   "personal web/assets/assets/fonts/open-sans/OpenSans-Regular.ttf": "3ed9575dcc488c3e3a5bd66620bdf5a4",
   "personal web/assets/assets/fonts/poppins/Poppins-Bold.ttf": "a3e0b5f427803a187c1b62c5919196aa",
-  "personal web/assets/assets/fonts/poppins/Poppins-Italic.ttf": "5e956c44060a7b3c0e39819ae390ab15",
+  "personal web//assets/fonts/poppins/Poppins-Italic.ttf": "5e956c44060a7b3c0e39819ae390ab15",
   "personal web/assets/assets/fonts/poppins/Poppins-Regular.ttf": "8b6af8e5e8324edfd77af8b3b35d7f9c",
   "personal web/assets/assets/fonts/raleway/Raleway-Bold.ttf": "7802d8b27fcb19893ce6b38c0789268e",
   "personal web/assets/assets/fonts/raleway/Raleway-Italic.ttf": "f73026bcd64e5a5265ab616e5083cd48",
   "personal web/assets/assets/fonts/raleway/Raleway-Regular.ttf": "75b4247fdd3b97d0e3b8e07b115673c2",
-  "personal web/assets/assets/images/hero-bg.png": "b3874e54561495bb0d13fe1f69e1dc08",
+  "personal web//assets/images/hero-bg.png": "b3874e54561495bb0d13fe1f69e1dc08",
   "personal web/assets/assets/images/logo.png": "21e9e4a3b55421e6839f3b4523a23292",
   "personal web/assets/assets/images/portfolio-1.png": "4f54860d4b0425111dcf7958d9fd62d0",
   "personal web/assets/FontManifest.json": "9e56ab348b2d87df3f9609c20d58c8cf",
@@ -25,9 +25,9 @@ const RESOURCES = {
   "personal web/favicon.png": "5dcef449791fa27946b3d35ad8803796",
   "personal web/icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
   "personal web/icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-  "personal web/index.html": "3267552c8a96f7ed1a2bd5bbfc18a6c5",
-  "/personal web/": "3267552c8a96f7ed1a2bd5bbfc18a6c5",
-  "personal web/main.dart.js": "814e79f64ebf972f060f2c0239bcf834",
+  "personal web/index.html": "9a8f4f11716dc45ca1d5920c1fb7bcc5",
+  "/personal web/": "9a8f4f11716dc45ca1d5920c1fb7bcc5",
+  "personal web/main.dart.js": "3f0aedbdde63c3615706f75253ea464d",
   "personal web/manifest.json": "da0521415e477075715e6e9877c8d301",
   "personal web/version.json": "a209f32229bd5929b0257dae3d4365c2"
 };
@@ -169,7 +169,7 @@ async function downloadOffline() {
   for (var request of await contentCache.keys()) {
     var key = request.url.substring(origin.length + 1);
     if (key == "") {
-      key = "/";
+      key = "/personal web/";
     }
     currentContent[key] = true;
   }
