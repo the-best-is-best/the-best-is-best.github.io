@@ -9,7 +9,7 @@ const RESOURCES = {
   "personal web/assets/assets/fonts/open-sans/OpenSans-Regular.ttf": "3ed9575dcc488c3e3a5bd66620bdf5a4",
   "personal web/assets/assets/fonts/poppins/Poppins-Bold.ttf": "a3e0b5f427803a187c1b62c5919196aa",
   "personal web/assets/assets/fonts/poppins/Poppins-Italic.ttf": "5e956c44060a7b3c0e39819ae390ab15",
-  "personal web//assets/fonts/poppins/Poppins-Regular.ttf": "8b6af8e5e8324edfd77af8b3b35d7f9c",
+  "personal web/assets/assets/fonts/poppins/Poppins-Regular.ttf": "8b6af8e5e8324edfd77af8b3b35d7f9c",
   "personal web/assets/assets/fonts/raleway/Raleway-Bold.ttf": "7802d8b27fcb19893ce6b38c0789268e",
   "personal web/assets/assets/fonts/raleway/Raleway-Italic.ttf": "f73026bcd64e5a5265ab616e5083cd48",
   "personal web/assets/assets/fonts/raleway/Raleway-Regular.ttf": "75b4247fdd3b97d0e3b8e07b115673c2",
@@ -25,9 +25,9 @@ const RESOURCES = {
   "personal web/favicon.png": "5dcef449791fa27946b3d35ad8803796",
   "personal web/icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
   "personal web/icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-  "index.html": "2cc0df2689f0dec432419b26629a41e8",
-  "/personal web/": "2cc0df2689f0dec432419b26629a41e8",
-  "personal web/main.dart.js": "123da9e3d23bf5a42383a25234164b7c",
+  "personal web/index.html": "cd7b896b5ac83bc5fc77a901a83c8bb9",
+  "/personal web/": "cd7b896b5ac83bc5fc77a901a83c8bb9",
+  "personal web/main.dart.js": "8cb6ebb847b2dd84cc83cfd57d5c29fb",
   "personal web/manifest.json": "da0521415e477075715e6e9877c8d301",
   "personal web/version.json": "a209f32229bd5929b0257dae3d4365c2"
 };
